@@ -5,5 +5,5 @@ jobs:
                 runs-on: ubuntu-latest
                 steps:
                         - run: "ls -la /"
-                        - run: "echo yay ^^!"
+                        - run: "echo -e \"\e[1myay\e[m ^^! https://example.com/\""
 
