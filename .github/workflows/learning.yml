@@ -1,8 +1,17 @@
 on:
-    push:
+    schedule:
+        - cron: "* * * * *"
 
 jobs:
     job-A:
         runs-on: ubuntu-latest
         steps:
-            - run: "curl 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'"
+            - uses: actions/checkout@v2
+            - run: |
+              curl 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' -o yt_watch_page.txt
+              git config user.name github-actions
+              git config user.email github-actions@github.com
+              git add .
+              git commit -m "auto-generated"
+              git push
+
