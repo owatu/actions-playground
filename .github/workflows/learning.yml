@@ -1,9 +1,8 @@
-on: [push]
+on:
+    push:
 
 jobs:
-        jobA:
-                runs-on: ubuntu-latest
-                steps:
-                        - run: "ls -la /"
-                        - run: "echo -e \"\e[1myay\e[m ^^! https://example.com/\""
-
+    job-A:
+        runs-on: ubuntu-latest
+        steps:
+            - run: "curl 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'"
