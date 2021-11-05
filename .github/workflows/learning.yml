@@ -1,4 +1,4 @@
-name: Learning ${{ env.GITHUB_SHA }}
+name: Learning ${{ github.sha }}
 
 on:
   workflow_dispatch:
@@ -9,3 +9,4 @@ jobs:
     steps:
       - run: |
           echo "Hello, World!"
+          echo $GITHUB_SHA
