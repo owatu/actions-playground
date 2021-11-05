@@ -1,3 +1,5 @@
+name: Learning ${{ GITHUB_SHA }}
+
 on:
   workflow_dispatch:
 
