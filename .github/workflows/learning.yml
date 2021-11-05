@@ -1,4 +1,4 @@
-name: Learning ${{ GITHUB_SHA }}
+name: Learning ${{ env.GITHUB_SHA }}
 
 on:
   workflow_dispatch:
