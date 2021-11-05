@@ -1,5 +1,3 @@
-name: Learning
-
 on:
   workflow_dispatch:
 
