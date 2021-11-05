@@ -43,10 +43,10 @@ jobs:
     steps:
       - run: |
           echo "Hello, World!"
-          echo "in ${{ github }}"
+          echo "in ${{ github.job }}"
   job-3:
     runs-on: ubuntu-latest
     steps:
       - run: |
           echo "Hello, World!"
-          echo $GITHUB_SHA
+          echo "in ${{ github.job }}"
