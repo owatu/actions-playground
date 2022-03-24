@@ -1,18 +1,11 @@
 name: Learning
 
-on:
-  workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
-  list_root:
-    name: list root(/) directory on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-          - windows-latest
-          - macOS-latest
-    
+  test:
+    runs-on: ubuntu-latest
     steps:
-      - run: ls /
+      - run: "echo hello world!"
+      - run: "dd if=/dev/zero count=64"
+      - run: "echo the end, goodbye"
