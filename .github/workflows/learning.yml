@@ -6,6 +6,5 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: "echo hello world!"
-      - run: "dd if=/dev/zero count=64"
-      - run: "echo the end, goodbye"
+      - run: "env"
+      - run: "echo ${{github}}"
