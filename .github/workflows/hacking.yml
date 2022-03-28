@@ -1,1 +1,7 @@
+on: [workflow_dispatch]
 
+jobs:
+  hack:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo a
