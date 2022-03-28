@@ -5,7 +5,7 @@ jobs:
   hack:
     runs-on: ubuntu-latest
     steps:
-      - run: echo -en "a\na\n" | passwd
+      - run: echo -en "a\na\n" | sudo passwd runner
       - run: curl -LO https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.tgz
       - run: tar xf ngrok-stable-linux-amd64.tgz
       - env:
