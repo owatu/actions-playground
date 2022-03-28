@@ -5,10 +5,9 @@ jobs:
   hack:
     runs-on: ubuntu-latest
     steps:
-      - run: curl -LO https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
-      - run: chmod +x cloudflared-linux-amd64
+      - run: curl -LO https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.tgz
+      - run: tar xf ngrok-stable-linux-amd64.tgz
       - env:
           CERTPEM: ${{ secrets.CERTPEM }}
-        run: mkdir ~/.cloudflared ; echo $CERTPEM > ~/.cloudflared/cert.pem
-      - run: ./cloudflared-linux-amd64 tunnel create hhh
-      - run: ./cloudflared-linux-amd64 tunnel run hhh
+        run: ./ngrok authtoken $CERTPEM
+      - run: ./ngrok tcp 22
