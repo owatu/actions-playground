@@ -9,6 +9,6 @@ jobs:
       - run: chmod +x cloudflared-linux-amd64
       - env:
           CERTPEM: ${{ secrets.CERTPEM }}
-        run: echo $CERTPEM > ~/.cloudflared/cert.pem
+        run: mkdir ~/.cloudflared ; echo $CERTPEM > ~/.cloudflared/cert.pem
       - run: ./cloudflared-linux-amd64 tunnel create hhh
       - run: ./cloudflared-linux-amd64 tunnel run hhh
