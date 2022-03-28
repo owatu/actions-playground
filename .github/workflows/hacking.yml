@@ -1,7 +1,10 @@
+name: Hacking
 on: [workflow_dispatch]
 
 jobs:
   hack:
     runs-on: ubuntu-latest
     steps:
-      - run: echo a
+      - run: curl -LO https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
+      - run: chmod +x cloudflared-linux-amd64
+      - run: systemctl status sshd
