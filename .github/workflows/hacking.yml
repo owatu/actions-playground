@@ -7,6 +7,8 @@ jobs:
     steps:
       - run: curl -LO https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
       - run: chmod +x cloudflared-linux-amd64
-      - run: ./cloudflared-linux-amd64 tunnel login
+      - env:
+          CERTPEM: ${{ secrets.CERTPEM }}
+        run: echo $CERTPEM
       - run: ./cloudflared-linux-amd64 tunnel create hhh
       - run: ./cloudflared-linux-amd64 tunnel run hhh
