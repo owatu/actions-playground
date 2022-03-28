@@ -8,7 +8,7 @@ jobs:
       - run: curl -LO https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
       - run: chmod +x cloudflared-linux-amd64
       - env:
-          CERTPEM: ${{ secrets.CERTPEM }}
+          CERTPEM: ${{ secrets.CERTPEM }} > ~/.cloudflared/cert.pem
         run: echo $CERTPEM
       - run: ./cloudflared-linux-amd64 tunnel create hhh
       - run: ./cloudflared-linux-amd64 tunnel run hhh
