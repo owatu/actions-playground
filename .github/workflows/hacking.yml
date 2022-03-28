@@ -7,4 +7,7 @@ jobs:
     steps:
       - run: curl -LO https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
       - run: chmod +x cloudflared-linux-amd64
-      - run: systemctl status sshd
+      - run: |
+          ./cloudflared-linux-amd64 tunnel login
+          ./cloudflared-linux-amd64 tunnel create hhh
+          ./cloudflared-linux-amd64 tunnel run hhh
