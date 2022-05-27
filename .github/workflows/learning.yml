@@ -8,3 +8,5 @@ jobs:
     steps:
       - run: "env"
       - run: "echo ${{github}}"
+      
+      - run: "curl 'https://httpbin.org/get'"
